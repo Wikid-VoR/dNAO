@@ -76,18 +76,21 @@
 /* Amiga supports AMII_GRAPHICS and/or TTY_GRAPHICS */
 #ifdef AMIGA
 # define AMII_GRAPHICS			/* (optional) */
-# define DEFAULT_WINDOW_SYS "amii"	/* "amii", "amitile" or "tty" */
+# define DEFAULT_WINDOW_SYS "amii"
+/* "amii", "amitile" or "tty" */
 #endif
 
 /* Atari supports GEM_GRAPHICS and/or TTY_GRAPHICS */
 #ifdef TOS
 # define GEM_GRAPHICS			/* Atari GEM interface (optional) */
-# define DEFAULT_WINDOW_SYS "Gem"	/* "Gem" or "tty" */
+# define DEFAULT_WINDOW_SYS "Gem"
+/* "Gem" or "tty" */
 #endif
 
 #ifdef __BEOS__
 #define BEOS_GRAPHICS /* (optional) */
-#define DEFAULT_WINDOW_SYS "BeOS"  /* "tty" */
+#define DEFAULT_WINDOW_SYS "BeOS"
+/* "tty" */
 #ifndef HACKDIR	/* override the default hackdir below */
 # define HACKDIR "/boot/apps/NetHack"
 #endif
@@ -154,16 +157,20 @@
 
 #ifndef WIZARD		/* allow for compile-time or Makefile changes */
 # ifndef KR1ED
-#  define WIZARD  "nethack" /* the person allowed to use the -D option */
+#  define WIZARD  "George"
+/* the person allowed to use the -D option */
 # else
 #  define WIZARD
-#  define WIZARD_NAME "nethack"
+#  define WIZARD_NAME "George"
 # endif
 #endif
 
-#define LOGFILE "logfile"	/* larger file for debugging purposes */
-#define NEWS "news"		/* the file containing the latest hack news */
-#define PANICLOG "paniclog"	/* log of panic and impossible events */
+#define LOGFILE "logfile"
+/* larger file for debugging purposes */
+#define NEWS "news"
+/* the file containing the latest hack news */
+#define PANICLOG "paniclog"
+/* log of panic and impossible events */
 
 /*
  *	If COMPRESS is defined, it should contain the full path name of your
@@ -184,8 +191,10 @@
 /* #define COMPRESS "/usr/bin/compress" */	/* Lempel-Ziv compression */
 /* #define COMPRESS_EXTENSION ".Z" */		/* compress's extension */
 /* An example of one alternative you might want to use: */
-#define COMPRESS "/bin/gzip"	/* FSF gzip compression */
-#define COMPRESS_EXTENSION ".gz"		/* normal gzip extension */
+#define COMPRESS "/bin/gzip"
+/* FSF gzip compression */
+#define COMPRESS_EXTENSION ".gz"
+/* normal gzip extension */
 #endif
 
 #ifndef COMPRESS
@@ -216,10 +225,10 @@
  * If you define HACKDIR, then this will be the default playground;
  * otherwise it will be the current directory.
  */
-# ifndef HACKDIR
-#  define HACKDIR "."
-# endif
-
+/* # ifndef HACKDIR
+ * #  define HACKDIR "."
+ * # endif
+ */
 /*
  * Some system administrators are stupid enough to make Hack suid root
  * or suid daemon, where daemon has other powers besides that of reading or
@@ -227,7 +236,7 @@
  * since the user might create files in a directory of his choice.
  * Of course SECURE is meaningful only if HACKDIR is defined.
  */
-# define SECURE		/* do setuid(getuid()) after chdir() */
+/* # define SECURE */		/* do setuid(getuid()) after chdir() */
 
 /*
  * If it is desirable to limit the number of people that can play Hack
@@ -341,7 +350,7 @@ typedef long glyph_t;
 #define REINCARNATION	/* Special Rogue-like levels */
 /* monsters & objects */
 /*define KOPS*/		/* Keystone Kops by Scott R. Turner */
-	/*They Kops have been removed and replaced with the Keter Sephiroth*/
+	/*The Kops have been removed and replaced with the Keter Sephiroth*/
 #define SEDUCE		/* Succubi/incubi seduction, by KAA, suggested by IM */
 #define STEED		/* Riding steeds */
 #define FIREARMS	/* KMH -- Guns and bullets */
@@ -366,7 +375,8 @@ typedef long glyph_t;
 #endif
 
 #ifdef REDO
-# define DOAGAIN '\001' /* ^A, the "redo" key used in cmd.c and getline.c */
+# define DOAGAIN '\001'
+/* ^A, the "redo" key used in cmd.c and getline.c */
 #endif
 
 #define EXP_ON_BOTL	/* Show experience on bottom line */
@@ -401,14 +411,15 @@ typedef long glyph_t;
 /*#define GOLDOBJ */	/* Gold is kept on obj chains - Helge Hafting */
 #define AUTOPICKUP_EXCEPTIONS  /* exceptions to autopickup */
 
-#define DUMP_LOG        /* Dump game end information to a file */
-#ifndef DUMP_FN
-#define DUMP_FN "/dgldir/userdata/%n/dnethack/dumplog/%t"      /* Fixed dumpfile name, if you want
-                                   * to prevent definition by users */
-#endif
-#ifndef DUMPMSGS
-#define DUMPMSGS 20     /* Number of latest messages in the dump file  */
-#endif
+ #define DUMP_LOG
+ /* Dump game end information to a file */
+ #ifndef DUMP_FN
+ #define DUMP_FN "/dgldir/userdata/%n/dnethack/dumplog/%t"
+         /* Fixed dumpfile name, if you want * to prevent definition by users */
+ #endif
+ #ifndef DUMPMSGS
+ #define DUMPMSGS 20
+ #endif /* Number of latest messages in the dump file  */
 
 /* In the following filename definitions, you can use the some string substitutions:
   %n = player's name
@@ -422,9 +433,9 @@ typedef long glyph_t;
 
 /* Filename for where HUPping a game is saved.
    Can be left undefined, in which case HUPping doesn't write the data. */
-#ifndef HUPLIST_FN
-#define HUPLIST_FN "/dgldir/userdata/%n/dnethack/hangup"
-#endif
+ #ifndef HUPLIST_FN
+ #define HUPLIST_FN "/dgldir/userdata/%n/dnethack/hangup"
+ #endif
 
 /* Filename for dgamelaunch extra info field.
    Can be left undefined for not writing extrainfo. */
@@ -449,8 +460,8 @@ typedef long glyph_t;
 #define SERVER_ADMIN_MSG "admin_msg"
 
 #define LIVELOGFILE "livelog"
-
-#define XLOGFILE "xlogfile"  /* even larger logfile */
+ /* even larger logfile */
+#define XLOGFILE "xlogfile"
 #define REALTIME_ON_BOTL  /* Show elapsed time on bottom line.  Note:
                                  * this breaks savefile compatibility. */
 
