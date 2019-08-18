@@ -411,15 +411,15 @@ typedef long glyph_t;
 /*#define GOLDOBJ */	/* Gold is kept on obj chains - Helge Hafting */
 #define AUTOPICKUP_EXCEPTIONS  /* exceptions to autopickup */
 
- #define DUMP_LOG
+ /* #define DUMP_LOG */
  /* Dump game end information to a file */
- #ifndef DUMP_FN
- #define DUMP_FN "/dgldir/userdata/%n/dnethack/dumplog/%t"
+ /* #ifndef DUMP_FN */
+ /* #define DUMP_FN "/dgldir/userdata/%n/dnethack/dumplog/%t" */
          /* Fixed dumpfile name, if you want * to prevent definition by users */
- #endif
- #ifndef DUMPMSGS
- #define DUMPMSGS 20
- #endif /* Number of latest messages in the dump file  */
+ /* #endif */
+ /* #ifndef DUMPMSGS */
+ /* #define DUMPMSGS 20 */
+ /* #endif  *//* Number of latest messages in the dump file  */
 
 /* In the following filename definitions, you can use the some string substitutions:
   %n = player's name
